@@ -73,10 +73,10 @@ if (digitalRead(Forward_S) == 0) //If Fire is straight ahead
     digitalWrite(RM2, LOW);
     fire = true;
         put_off_fire();
-    digitalWrite(burzer, HIGH);
-    delay(500);
-    digitalWrite(burzer, LOW);
-    delay(500);
+    // digitalWrite(burzer, HIGH);
+    // delay(500);
+    // digitalWrite(burzer, LOW);
+    // delay(500);
   }
 
   else if (digitalRead(Left_S) == 0) //If Fire is to the left
@@ -86,27 +86,35 @@ if (digitalRead(Forward_S) == 0) //If Fire is straight ahead
     digitalWrite(LM2, HIGH);
     digitalWrite(RM1, LOW);
     digitalWrite(RM2, HIGH);
-    digitalWrite(burzer, HIGH);
-    delay(500);
-    digitalWrite(burzer, LOW);
-    delay(500);
+    // digitalWrite(burzer, HIGH);
+    // delay(500);
+    // digitalWrite(burzer, LOW);
+    // delay(500);
   }
+//    else if(digitalRead(Left_S) == 0 || digitalRead(Right_S) == 0 || digitalRead(Forward_S) == 0) {
+//     digitalWrite(burzer, HIGH);
+//     delay(500);
+//     digitalWrite(burzer, LOW);
+//     delay(500);
+// }
 
   else if (digitalRead(Right_S) == 0) //If Fire is to the right
   {
     //Move the robot right
     digitalWrite(LM1, HIGH);
-    digitalWrite(LM2, HIGH);
+    digitalWrite(LM2, LOW);
     digitalWrite(RM1, HIGH);
-    digitalWrite(RM2, LOW);
-    digitalWrite(burzer, HIGH);
-    delay(500);
-    digitalWrite(burzer, LOW);
-    delay(500);
+    digitalWrite(RM2, HIGH);
+    // digitalWrite(burzer, HIGH);
+    // delay(500);
+    // digitalWrite(burzer, LOW);
+    // delay(500);
   }
 
   delay(300); //Slow down the speed of robot
 }
+
+
 void put_off_fire()
 {
 
@@ -129,5 +137,5 @@ void put_off_fire()
 
   myservo.write(90);
 
-  fire = false;
+  fire = false;
 }
